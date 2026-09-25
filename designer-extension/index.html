@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Accessibility Audit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./panel.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Accessibility Audit</h1>
+      <p class="muted">WCAG 2.2 checks for your pages, with fixes applied in the Designer.</p>
+    </header>
+
+    <section class="card" id="connect" hidden>
+      <h2>Connect</h2>
+      <p class="muted">Paste the Site ID and admin token shown after installation.</p>
+      <div class="row">
+        <input id="conn-site" placeholder="Site ID" aria-label="Site ID" />
+        <input id="conn-token" type="password" placeholder="Admin token" aria-label="Admin token" />
+        <button id="conn-save" class="btn primary">Connect</button>
+      </div>
+    </section>
+
+    <div id="main" hidden>
+      <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
+        <button class="tab active" role="tab" data-tab="overview">Overview</button>
+        <button class="tab" role="tab" data-tab="findings">Findings</button>
+        <button class="tab" role="tab" data-tab="pages">Pages</button>
+        <button class="tab" role="tab" data-tab="ignored">Ignored</button>
+        <button class="tab" role="tab" data-tab="settings">Settings</button>
+      </nav>
+      <section id="view" aria-live="polite"></section>
+    </div>
+    <div id="toast" class="toast" role="status" hidden></div>
+  </div>
+  <script src="./panel.js"></script>
+</body>
+</html>
